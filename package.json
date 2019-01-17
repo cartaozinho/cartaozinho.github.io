@@ -3,6 +3,10 @@
     "name": "startbootstrap-coming-soon",
     "version": "5.0.1",
     "description": "Coming Soon is a Bootstrap 4 coming soon page theme.",
+    "scripts": {
+        "start": "gulp dev",
+        "build": "gulp --help"
+    },
     "keywords": [
         "css",
         "sass",
