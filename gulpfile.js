@@ -138,7 +138,7 @@ gulp.task("bundle", function () {
     './index.html',
     './css/*.min.css',
     './js/*.min.js',
-    './vendor/**/*.min.*',
+    './vendor/**',
     './img/**',
     './mp4/**'
   ];
