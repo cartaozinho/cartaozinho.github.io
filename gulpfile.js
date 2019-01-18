@@ -9,6 +9,8 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const pkg = require('./package.json');
+const clean = require('gulp-clean');
+const { series } = require('gulp');
 
 // Set the banner content
 const banner = ['/*!\n',
@@ -123,3 +125,24 @@ gulp.task("default", gulp.parallel('vendor', css, js));
 
 // dev task
 gulp.task("dev", gulp.parallel(watchFiles, browserSync));
+
+// bundle tasks
+const bundleDir = './public'
+gulp.task("clean", function() {
+  return gulp
+    .src(bundleDir, { read: false, allowEmpty: true })
+    .pipe(clean());
+});
+gulp.task("bundle", function () {
+  const items = [
+    './index.html',
+    './css/*.min.css',
+    './js/*.min.js',
+    './vendor/**/*.min.*',
+    './img/**',
+    './mp4/**'
+  ];
+  return gulp
+    .src(items, { base: './' })
+    .pipe(gulp.dest(bundleDir));
+});
