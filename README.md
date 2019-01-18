@@ -2,6 +2,7 @@
 
 * `npm start`: Run the project locally and open a version in your browser
 * `npm run build`: Build the project
+* `npm run bundle`: Copy important files to public/ folder. That is the folder to be deployed
 
 # [Start Bootstrap - Coming Soon](https://startbootstrap.com/template-overviews/coming-soon/)
 
