@@ -49,24 +49,19 @@
                 <li style="list-style-type: none;"><span>&#8226;</span> Canal de comunicação direta com o cliente</li>
               </ol>
 
-              <!-- <p class="mb-5">We're working hard to finish the development of this site. Our target launch date is
-                <strong>January 2019</strong>! Sign up for updates using the form below!</p> -->
-
+              <form action="http://34.205.227.209:3000/register" method="POST">
                 <div class="input-group input-group-newsletter">
-
-                <input type="email" class="form-control" placeholder="Informe seu email para saber mais..." aria-label="Informe seu email para saber mais..." aria-describedby="basic-addon">
-                <div class="input-group-append">
-                  <button class="btn btn-secondary" type="button">Enviar</button>
+                  <input type="email" class="form-control" name="email" placeholder="Informe seu email para saber mais..." aria-label="Informe seu email para saber mais..." aria-describedby="basic-addon">
+                  <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button" onclick = "this.form.submit();">Enviar</button>
+                  </div>
                 </div>
-
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
