@@ -49,11 +49,11 @@
                 <li style="list-style-type: none;"><span>&#8226;</span> Canal de comunicação direta com o cliente</li>
               </ol>
 
-              <form action="http://34.205.227.209:3000/register" method="POST">
+              <form name="myform" id="myform" action="http://34.205.227.209:3000/register" method="POST">
                 <div class="input-group input-group-newsletter">
                   <input type="email" class="form-control" name="email" placeholder="Informe seu email para saber mais..." aria-label="Informe seu email para saber mais..." aria-describedby="basic-addon">
                   <div class="input-group-append">
-                    <button class="btn btn-secondary" type="button" onclick = "this.form.submit();">Enviar</button>
+                    <button class="btn btn-secondary" type="submit" >Enviar</button>
                   </div>
                 </div>
               </form>
@@ -65,10 +65,17 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/coming-soon.min.js"></script>
+
+    <script>
+      $('#myform').ajaxForm(function(response) {
+        alert('Seu interesse foi registrado. Em breve entraremos em contato');
+      });
+    </script>
 
   </body>
 
