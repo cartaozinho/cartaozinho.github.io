@@ -59,7 +59,7 @@
 
               <form name="myform" id="myform" action="http://34.205.227.209:3000/register" method="POST">
                 <div class="input-group input-group-newsletter">
-                  <input type="email" class="form-control" name="email" placeholder="Informe seu email para saber mais..." aria-label="Informe seu email para saber mais..." aria-describedby="basic-addon">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Informe seu email para saber mais..." aria-label="Informe seu email para saber mais..." aria-describedby="basic-addon">
                   <div class="input-group-append">
                     <button class="btn btn-secondary" type="submit" >Enviar</button>
                   </div>
@@ -78,6 +78,14 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/coming-soon.min.js"></script>
+
+    <script>
+      $('#myform').ajaxForm(function(response) {
+        var gforms = "https://docs.google.com/forms/d/e/1FAIpQLSc6AQbAk0dLnP0Uetqu-Gxno4TQLXehm09pIi2RVksuFk9maA/viewform?entry.1473799162="    
+        var email = $('#email').val(); 
+        window.location.replace(`${gforms}${email}`);
+      });
+    </script>
 
   </body>
 
