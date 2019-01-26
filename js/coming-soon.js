@@ -4,12 +4,18 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-coming-soon/blob/master/LICENSE)
  */
 
+function goToGoogleForms() {
+  var gforms = "https://docs.google.com/forms/d/e/1FAIpQLSc6AQbAk0dLnP0Uetqu-Gxno4TQLXehm09pIi2RVksuFk9maA/viewform?entry.1473799162="
+  var email = $('#email').val();
+  window.location = gforms + email;
+}
+
 (function($) {
   "use strict"; // Start of use strict
 
-  $('#myform').ajaxForm(function() {
-    alert('Seu interesse foi registrado. Em breve entraremos em contato');
-    $('#myform').trigger('reset')
-  })
+  $('#myform').ajaxForm({
+    success: goToGoogleForms,
+    error: goToGoogleForms
+  });
 
 })(jQuery); // End of use strict
